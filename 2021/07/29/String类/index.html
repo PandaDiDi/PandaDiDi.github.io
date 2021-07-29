@@ -17,21 +17,24 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>继承 | Hexo</title>
-  <meta name="description" content="构造函数、继承1.MethodOverload(方法重载 overload)： 两个条件：        (1)、 方法名必须相同；        (2) 、参数列表必须不同(个数、类型、顺序)；  注意：        (1)、参数类型的自动类型提升              (2)、编译器会根据参数在编译时确定运行时执行哪个方法。   方法重载示例：12345678910111213Array">
+  <title>String类 | Hexo</title>
+  <meta name="description" content="String类1. String 的本质是什么？123456789char类型的数组 &#x2F;** The value is used for character storage. *&#x2F;    private final char value[];示例：String  name &#x3D; &quot;ZhangYuxuan&quot;;  &#x2F;&#x2F;本质 就是 private final char[] value">
 <meta property="og:type" content="article">
-<meta property="og:title" content="继承">
-<meta property="og:url" content="http://example.com/2021/07/21/%E7%BB%A7%E6%89%BF/index.html">
+<meta property="og:title" content="String类">
+<meta property="og:url" content="http://example.com/2021/07/29/String%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="构造函数、继承1.MethodOverload(方法重载 overload)： 两个条件：        (1)、 方法名必须相同；        (2) 、参数列表必须不同(个数、类型、顺序)；  注意：        (1)、参数类型的自动类型提升              (2)、编译器会根据参数在编译时确定运行时执行哪个方法。   方法重载示例：12345678910111213Array">
+<meta property="og:description" content="String类1. String 的本质是什么？123456789char类型的数组 &#x2F;** The value is used for character storage. *&#x2F;    private final char value[];示例：String  name &#x3D; &quot;ZhangYuxuan&quot;;  &#x2F;&#x2F;本质 就是 private final char[] value">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-07-21T08:23:23.000Z">
-<meta property="article:modified_time" content="2021-07-21T11:01:38.710Z">
+<meta property="og:image" content="http://example.com/2021/07/29/String%E7%B1%BB/1.png">
+<meta property="og:image" content="http://example.com/2021/07/29/String%E7%B1%BB/%E5%AD%97%E7%AC%A6%E4%B8%B2String1.png">
+<meta property="article:published_time" content="2021-07-29T11:22:38.000Z">
+<meta property="article:modified_time" content="2021-07-29T11:30:55.731Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="课堂笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/07/29/String%E7%B1%BB/1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2021/07/21/%E7%BB%A7%E6%89%BF/index.html">
+  <link rel="canonical" href="http://example.com/2021/07/29/String%E7%B1%BB/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -348,14 +351,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-继承" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-String类" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      继承
+      String类
     </h1>
   
 
@@ -363,8 +366,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/07/21/%E7%BB%A7%E6%89%BF/" class="article-date">
-	  <time datetime="2021-07-21T08:23:23.000Z" itemprop="datePublished">2021-07-21</time>
+	<a href="/2021/07/29/String%E7%B1%BB/" class="article-date">
+	  <time datetime="2021-07-29T11:22:38.000Z" itemprop="datePublished">2021-07-29</time>
 	</a>
 </span>
         
@@ -382,118 +385,39 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/07/21/%E7%BB%A7%E6%89%BF/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/07/29/String%E7%B1%BB/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.4k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 832(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="构造函数、继承"><a href="#构造函数、继承" class="headerlink" title="构造函数、继承"></a>构造函数、继承</h1><h2 id="1-MethodOverload-方法重载-overload-："><a href="#1-MethodOverload-方法重载-overload-：" class="headerlink" title="1.MethodOverload(方法重载 overload)："></a><strong>1.MethodOverload(方法重载 overload)：</strong></h2><pre><code> 两个条件：
-       (1)、 方法名必须相同；
-       (2) 、参数列表必须不同(个数、类型、顺序)；
- 注意：
-       (1)、参数类型的自动类型提升      
-       (2)、编译器会根据参数在编译时确定运行时执行哪个方法。
-</code></pre>
-<hr>
-<h4 id="方法重载示例："><a href="#方法重载示例：" class="headerlink" title="方法重载示例："></a>方法重载示例：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(<span class="keyword">int</span>[] a);  <span class="comment">// 方法名相同，参数类型不一样</span></span><br><span class="line">Arrays.sort(<span class="keyword">char</span>[] a);</span><br><span class="line">Arrays.sort(<span class="keyword">float</span>[] a);</span><br><span class="line"></span><br><span class="line">Arrays.fill(<span class="keyword">int</span>[] a, <span class="keyword">int</span> val) &#123;...&#125; <span class="comment">// 方法名相同，参数个数、类型不一样</span></span><br><span class="line">Arrays.fill(<span class="keyword">double</span>[] a, <span class="keyword">int</span> fromIndex, <span class="keyword">int</span> toIndex,<span class="keyword">double</span> val)&#123;...&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123; &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">float</span> x,<span class="keyword">float</span> y)</span></span>&#123; &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123; &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">float</span> b)</span></span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">float</span> a, <span class="keyword">int</span> b)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><h2 id="1-String-的本质是什么？"><a href="#1-String-的本质是什么？" class="headerlink" title="1. String 的本质是什么？"></a>1. String 的本质是什么？</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>类型的数组</span><br><span class="line"> <span class="comment">/** The value is used for character storage. */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">char</span> value[];</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">String  name = <span class="string">&quot;ZhangYuxuan&quot;</span>;  </span><br><span class="line"><span class="comment">//本质 就是 private final char[] value = &#123;&#x27;Z&#x27;,&#x27;h&#x27;,&#x27;a&#x27;,&#x27;n&#x27;,&#x27;g&#x27;,&#x27;Y&#x27;,&#x27;u&#x27;,&#x27;x&#x27;,&#x27;u&#x27;,&#x27;a&#x27;,&#x27;n&#x27;&#125;;</span></span><br><span class="line"></span><br><span class="line">由于 <span class="keyword">char</span> 数组常量，所以该字符串不能改变，即字符串是常量</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="2-构造函数-Constructor-构造方法，构造器"><a href="#2-构造函数-Constructor-构造方法，构造器" class="headerlink" title="2.构造函数 Constructor(构造方法，构造器)**"></a>2.构造函数 Constructor(构造方法，构造器)**</h2><pre><code>(1). 构造函数的作用：可以用于给对象进行初始化。  
-    当一个类中没有定义构造函数时，那么系统会默认给该类加入一个无参的构造函数。
-    当在类中自定义了有参构造函数后，默认的构造函数就没有了。
-    如需还要使用无参构造函数，必须显式的定义出来。
+<h2 id="2-String-是字符串常量"><a href="#2-String-是字符串常量" class="headerlink" title="2. String 是字符串常量"></a>2. String 是字符串常量</h2><p><img src="/2021/07/29/String%E7%B1%BB/1.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String stuName =  <span class="keyword">new</span> String(<span class="string">&quot;张宇轩&quot;</span>);</span><br><span class="line">         String name =<span class="string">&quot;张宇轩&quot;</span>;</span><br><span class="line">        name = <span class="string">&quot;ZhangYuxuan&quot;</span>;  <span class="comment">// private final char[] value = &#123;&#x27;Z&#x27;,&#x27;h&#x27;,&#x27;a&#x27;,&#x27;n&#x27;,&#x27;g&#x27;,&#x27;Y&#x27;,&#x27;u&#x27;,&#x27;x&#x27;,&#x27;u&#x27;,&#x27;a&#x27;,&#x27;n&#x27;&#125;;</span></span><br><span class="line">        name =<span class="string">&quot;小张&quot;</span>;</span><br><span class="line"></span><br><span class="line">        String s1 = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">        String s2 = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">        String s3 = <span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">        s1 =<span class="string">&quot;good&quot;</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-(2). 构造函数必须与类同名
-    只能被public private protected修饰，没有返回值
- 
- (3)构造的粗略过程如下 
-    a、分配对象空间，并将对象中成员初始化为0或者null等，java不允许用户操纵一个不定值的对象。 
-    b、初始化属性
-    c、执行构造函数方法体
-    d、将对象名指向堆内存中         
 
- (4).构造函数重载
-</code></pre>
-<h3 id="有参构造函数、无参构造函数"><a href="#有参构造函数、无参构造函数" class="headerlink" title="有参构造函数、无参构造函数"></a>有参构造函数、无参构造函数</h3><h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 构造函数 Constructor</span></span><br><span class="line"><span class="comment"> * (构造方法，构造器)</span></span><br><span class="line"><span class="comment"> * 作用: 初始化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> stuNo;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">private</span> String stuName; <span class="comment">//姓名</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//无参构造函数 constructor ：默认隐藏</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;构造函数 constructor&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//有参构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(<span class="keyword">int</span> stuNo,String stuName)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.stuNo = stuNo;</span><br><span class="line">        <span class="keyword">this</span>.stuName =  stuName;</span><br><span class="line">        System.out.println(<span class="string">&quot;student有参构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//void 没有返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//方法有返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> row = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> row &gt; <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"> <span class="comment">//1. new : 创建对象，开辟堆内存</span></span><br><span class="line"> <span class="comment">//2. Student() 构造函数： （1）初始化属性 ： stuNo = 0, stuName = null</span></span><br><span class="line"> <span class="comment">//                       （2）执行构造函数方法体</span></span><br><span class="line"></span><br><span class="line">    Student stu1 =  <span class="keyword">new</span> Student();</span><br><span class="line">    stu1.setStuNo(<span class="number">7788</span>);   <span class="comment">// setStuNo(..) &#123;   this.stuNo = stuNo; &#125;</span></span><br><span class="line">    stu1.setStuName(<span class="string">&quot;张南顶&quot;</span>); <span class="comment">//setStuName(..)&#123; this.stuName =  stuName; &#125;</span></span><br><span class="line">    </span><br><span class="line">    Student stu2 =  <span class="keyword">new</span> Student(<span class="number">7788</span>,<span class="string">&quot;张南顶&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;stu2 no ;&quot;</span> + stu2.getStuNo());</span><br><span class="line">    System.out.println(<span class="string">&quot;stu2 name ;&quot;</span> + stu2.getStuName());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">&quot;ok&quot;</span>); 创建了几个字符串<span class="string">&quot;hello&quot;</span>对象?</span><br><span class="line">    可能创建一个“hello”,也可能是两个</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/07/29/String%E7%B1%BB/%E5%AD%97%E7%AC%A6%E4%B8%B2String1.png"></p>
+<h2 id="由于字符串是常量，所以字符串String变量不能用于值经常发生改变的时候"><a href="#由于字符串是常量，所以字符串String变量不能用于值经常发生改变的时候" class="headerlink" title="由于字符串是常量，所以字符串String变量不能用于值经常发生改变的时候"></a>由于字符串是常量，所以字符串String变量不能用于值经常发生改变的时候</h2><h2 id="若String变量值经常发生改变，在字符串常量池会出现很多中间字符串，导致大量内存浪费"><a href="#若String变量值经常发生改变，在字符串常量池会出现很多中间字符串，导致大量内存浪费" class="headerlink" title="若String变量值经常发生改变，在字符串常量池会出现很多中间字符串，导致大量内存浪费"></a>若String变量值经常发生改变，在字符串常量池会出现很多中间字符串，导致大量内存浪费</h2><h2 id="3-String常用的方法-（至少列出15个）"><a href="#3-String常用的方法-（至少列出15个）" class="headerlink" title="3. String常用的方法 （至少列出15个）"></a>3. String常用的方法 （至少列出15个）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.将字符串转换成 char数组</span></span><br><span class="line"><span class="keyword">char</span>[] newWord = word.toCharArray();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; newWord.length; i++) &#123;</span><br><span class="line">    System.out.print(newWord[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.获得字符串的第一个字符，第5个字符</span></span><br><span class="line">System.out.println(word.charAt(<span class="number">0</span>));</span><br><span class="line">System.out.println(word.charAt(<span class="number">4</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.判断里面是否包含 &quot;not&quot;</span></span><br><span class="line">System.out.println(<span class="string">&quot;是否包含not:&quot;</span>+word.contains(<span class="string">&quot;not&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.获得字符串的长度</span></span><br><span class="line">System.out.println(<span class="string">&quot;字符串长度：&quot;</span>+word.length());</span><br><span class="line"></span><br><span class="line"><span class="comment">//5.将字符串转换成 byte数组</span></span><br><span class="line"><span class="keyword">byte</span>[] bytes = word.getBytes();</span><br><span class="line">System.out.println(bytes);</span><br><span class="line"></span><br><span class="line"><span class="comment">//6. 获得字符串中第一次出现字母e 的下标</span></span><br><span class="line">System.out.println(<span class="string">&quot;字母e出现的下标：&quot;</span>+word.indexOf(<span class="string">&#x27;e&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//7. 获得字符串中第一次出现 &quot;an&quot; 的下标</span></span><br><span class="line">System.out.println(<span class="string">&quot;字符串an出现的下标：&quot;</span>+word.indexOf(<span class="string">&quot;an&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//8.获得字符串中最后一次出现 &quot;e&quot;</span></span><br><span class="line">System.out.println(<span class="string">&quot;e最后的下标：&quot;</span>+word.lastIndexOf(<span class="string">&#x27;e&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//9.将字符串中的字母 &#x27;a&#x27; 替换成 &#x27;A&#x27;</span></span><br><span class="line">String result = word.replace(<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//10. 将字符串中的&quot;er&quot; 替换成 &#x27;ER&#x27;</span></span><br><span class="line">String result1 = word.replace(<span class="string">&quot;er&quot;</span>,<span class="string">&quot;ER&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//11. 将字符串全部转换成大写</span></span><br><span class="line">String result2 = word.toUpperCase();</span><br><span class="line"></span><br><span class="line"><span class="comment">//12. 将字符串全部转换成小写</span></span><br><span class="line">String result3 = word.toLowerCase();</span><br><span class="line"></span><br><span class="line"><span class="comment">//13. 截取前5个字符串</span></span><br><span class="line">System.out.println(word.substring(<span class="number">0</span>,<span class="number">5</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//14. 截取第6-10 个字符串</span></span><br><span class="line">System.out.println(word.substring(<span class="number">5</span>,<span class="number">10</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//15. 截取后6 个字符串</span></span><br><span class="line">System.out.println(word.substring(word.length()-<span class="number">7</span>,word.length()));</span><br><span class="line"></span><br><span class="line"><span class="comment">//16. 在字符串后拼接单词&quot;hello&quot;</span></span><br><span class="line">String result4 = word+<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">String result5= word.concat(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//17. 获得每个单词 &quot;Strings&quot;,&quot;are&quot;,&quot;constant;&quot;,&quot;their&quot;.....(即不输出中间的空格符号)</span></span><br><span class="line">String[] result6 = word.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result6.length; i++) &#123;</span><br><span class="line">    System.out.print(result6[i]);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println();</span><br><span class="line"></span><br><span class="line"><span class="comment">//18. 判断是否以&quot;Str&quot;开头</span></span><br><span class="line">System.out.println(word.startsWith(<span class="string">&quot;Str&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//19. 判断是否以&quot;Str&quot;结束</span></span><br><span class="line">System.out.println(word.endsWith(<span class="string">&quot;Str&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//20.输出原来字符串 每个字符</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); i++) &#123;</span><br><span class="line">    System.out.print(word.charAt(i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<hr>
-<p>3.this关键字     </p>
-<pre><code>(1) this关键字的用法：
-      a. 直接写this：代表当前对象。
-      b. this.XXX：访问当前对象的实例成员。仅当方法中定义有与属性同名的局部变量时，在方法中访问类的属性才需要用this.XXX。
-      c. this( )：调用本类的其他构造方法，这种用法只能出现在构造方法的第一行。
 
-(2) 调用 this(…) 必须是构造函数里的第一个语句;
 
-(3). 说明在什么情况下需要用到this：
-    第一、通过this调用另一个构造方法，用法是this(参数列表)，这个仅仅在类的构造方法中，别的地方不能这么用。
-    第二、函数参数或者函数中的局部变量和成员变量同名的情况下，成员变量被屏蔽，此时要访问成员变量则需要用“this.成员变量名”的方式来引用成员变量。
-    第三、在函数中，需要引用该函所属类的当前对象时候，直接用this。
-</code></pre>
-<hr>
-<p>4.继承<br>    “is a” 的关系<br>        狗是一种宠物 , 猫也是一种宠物<br>        dog is a pat<br>    声明的格式<br>        在Java 中 –  extends关键字</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	 <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="keyword">extends</span> <span class="title">Employee</span>   </span>&#123;…&#125;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="title">Manager</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">	     &#125;</span><br><span class="line">注意：Java中只有单一继承。</span><br><span class="line">Object类是所有类的根类。</span><br><span class="line"></span><br><span class="line">构造方法不能被继承</span><br><span class="line">方法和属性可被继承</span><br><span class="line">子类构造方法隐式调用父类的默认构造方法</span><br><span class="line">在子类的构造函数也可以显式的调用父类的构造, 使用<span class="keyword">super</span>(…)，但是必须是第一个行有效</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>5.super关键字<br>    super 指向父类对象<br>    super():  调用父类的构造函数,需放在构造方法内第一行。<br>    super.属性: 访问父类对象的实例成员。<br>    super.方法: 访问父类对象的方法。</p>
-<pre><code>注：属性没有覆盖(重写)
-
-注意：this 和super的区别
-super调用父类的属性，方法：    
-super.方法  ， 
-super.属性  
-super();
-
-this调用属性，方法：    
-this.方法 
-this.属性
-
-构造函数中的this：    
-get，set中的this
-
-this 和super的区别：
-    
-属性访问                                                            
-调用构造函数  特殊
-this            
-访问本类中的属性,方法. 如果本类没有此属性就在父类中继续查找        
-调用本类构造，必须放在构造函数的首行            
-表示当前对象
-
-super        
-访问父类中的属性,方法                                    
-调用父类构造，必须放在子类的首行
-</code></pre>
-<hr>
-<hr>
-<ul>
-<li><p>(1) 父类引用子类对象    Pet p1 = new Dog()</p>
-</li>
-<li><p>(2)子类 不能接收父类对象  Dog d2 = new Pet();</p>
-</li>
-<li><p>(3) 可以通过强制类型转换 将父类对象赋值给子类，转换之前一定要使用instanceof来判断，防止类型转换异常ClassCastException</p>
-</li>
-<li><p>if(pet instanceof Dog){//false|true, 判断 pet对象 是否是Dog类型（即 判断 pet1 对象 是不是可以用Dog来接收 ）</p>
-<pre><code>     Dog d = (Dog)pet;
-&#125;
-</code></pre>
-</li>
-</ul>
 
       
     </div>
@@ -503,7 +427,7 @@ super
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2021/07/21/%E7%BB%A7%E6%89%BF/" title="继承" target="_blank" rel="external">http://example.com/2021/07/21/继承/</a>
+      <a href="http://example.com/2021/07/29/String%E7%B1%BB/" title="String类" target="_blank" rel="external">http://example.com/2021/07/29/String类/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -549,13 +473,9 @@ super
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/07/26/final%E4%B8%8E%E9%87%8D%E5%86%99/" title="final与重写"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2021/07/21/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" title="方法重载与构造函数"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/07/29/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%86%85%E9%83%A8%E7%B1%BB/" title="面向对象-内部类"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
