@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>继承 | Hexo</title>
-  <meta name="description" content="构造函数、继承1.MethodOverload(方法重载 overload)： 两个条件：        (1)、 方法名必须相同；        (2) 、参数列表必须不同(个数、类型、顺序)；  注意：        (1)、参数类型的自动类型提升              (2)、编译器会根据参数在编译时确定运行时执行哪个方法。   方法重载示例：12345678910111213Array">
+  <title>包装类 | Hexo</title>
+  <meta name="description" content="JDK1.5新特性之包装类 包装类的作用 包装类的自动装箱、自动拆箱  包装类的转换  ### 基本数据类型包装基本数据类型            包装类                   12345678int					Integer			 char			    Character      byte				Byte			 short				Short               long">
 <meta property="og:type" content="article">
-<meta property="og:title" content="继承">
-<meta property="og:url" content="http://example.com/2021/07/21/%E7%BB%A7%E6%89%BF/index.html">
+<meta property="og:title" content="包装类">
+<meta property="og:url" content="http://example.com/2021/07/31/%E5%8C%85%E8%A3%85%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="构造函数、继承1.MethodOverload(方法重载 overload)： 两个条件：        (1)、 方法名必须相同；        (2) 、参数列表必须不同(个数、类型、顺序)；  注意：        (1)、参数类型的自动类型提升              (2)、编译器会根据参数在编译时确定运行时执行哪个方法。   方法重载示例：12345678910111213Array">
+<meta property="og:description" content="JDK1.5新特性之包装类 包装类的作用 包装类的自动装箱、自动拆箱  包装类的转换  ### 基本数据类型包装基本数据类型            包装类                   12345678int					Integer			 char			    Character      byte				Byte			 short				Short               long">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-07-21T08:23:23.000Z">
-<meta property="article:modified_time" content="2021-07-21T11:01:38.710Z">
+<meta property="article:published_time" content="2021-07-31T00:32:57.000Z">
+<meta property="article:modified_time" content="2021-07-31T00:34:03.224Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="课堂笔记">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2021/07/21/%E7%BB%A7%E6%89%BF/index.html">
+  <link rel="canonical" href="http://example.com/2021/07/31/%E5%8C%85%E8%A3%85%E7%B1%BB/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -348,14 +348,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-继承" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-包装类" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      继承
+      包装类
     </h1>
   
 
@@ -363,8 +363,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/07/21/%E7%BB%A7%E6%89%BF/" class="article-date">
-	  <time datetime="2021-07-21T08:23:23.000Z" itemprop="datePublished">2021-07-21</time>
+	<a href="/2021/07/31/%E5%8C%85%E8%A3%85%E7%B1%BB/" class="article-date">
+	  <time datetime="2021-07-31T00:32:57.000Z" itemprop="datePublished">2021-07-31</time>
 	</a>
 </span>
         
@@ -382,118 +382,50 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/07/21/%E7%BB%A7%E6%89%BF/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/07/31/%E5%8C%85%E8%A3%85%E7%B1%BB/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.4k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 421(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="构造函数、继承"><a href="#构造函数、继承" class="headerlink" title="构造函数、继承"></a>构造函数、继承</h1><h2 id="1-MethodOverload-方法重载-overload-："><a href="#1-MethodOverload-方法重载-overload-：" class="headerlink" title="1.MethodOverload(方法重载 overload)："></a><strong>1.MethodOverload(方法重载 overload)：</strong></h2><pre><code> 两个条件：
-       (1)、 方法名必须相同；
-       (2) 、参数列表必须不同(个数、类型、顺序)；
- 注意：
-       (1)、参数类型的自动类型提升      
-       (2)、编译器会根据参数在编译时确定运行时执行哪个方法。
-</code></pre>
-<hr>
-<h4 id="方法重载示例："><a href="#方法重载示例：" class="headerlink" title="方法重载示例："></a>方法重载示例：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(<span class="keyword">int</span>[] a);  <span class="comment">// 方法名相同，参数类型不一样</span></span><br><span class="line">Arrays.sort(<span class="keyword">char</span>[] a);</span><br><span class="line">Arrays.sort(<span class="keyword">float</span>[] a);</span><br><span class="line"></span><br><span class="line">Arrays.fill(<span class="keyword">int</span>[] a, <span class="keyword">int</span> val) &#123;...&#125; <span class="comment">// 方法名相同，参数个数、类型不一样</span></span><br><span class="line">Arrays.fill(<span class="keyword">double</span>[] a, <span class="keyword">int</span> fromIndex, <span class="keyword">int</span> toIndex,<span class="keyword">double</span> val)&#123;...&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123; &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">float</span> x,<span class="keyword">float</span> y)</span></span>&#123; &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123; &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">float</span> b)</span></span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">float</span> a, <span class="keyword">int</span> b)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-构造函数-Constructor-构造方法，构造器"><a href="#2-构造函数-Constructor-构造方法，构造器" class="headerlink" title="2.构造函数 Constructor(构造方法，构造器)**"></a>2.构造函数 Constructor(构造方法，构造器)**</h2><pre><code>(1). 构造函数的作用：可以用于给对象进行初始化。  
-    当一个类中没有定义构造函数时，那么系统会默认给该类加入一个无参的构造函数。
-    当在类中自定义了有参构造函数后，默认的构造函数就没有了。
-    如需还要使用无参构造函数，必须显式的定义出来。
-
-(2). 构造函数必须与类同名
-    只能被public private protected修饰，没有返回值
- 
- (3)构造的粗略过程如下 
-    a、分配对象空间，并将对象中成员初始化为0或者null等，java不允许用户操纵一个不定值的对象。 
-    b、初始化属性
-    c、执行构造函数方法体
-    d、将对象名指向堆内存中         
-
- (4).构造函数重载
-</code></pre>
-<h3 id="有参构造函数、无参构造函数"><a href="#有参构造函数、无参构造函数" class="headerlink" title="有参构造函数、无参构造函数"></a>有参构造函数、无参构造函数</h3><h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 构造函数 Constructor</span></span><br><span class="line"><span class="comment"> * (构造方法，构造器)</span></span><br><span class="line"><span class="comment"> * 作用: 初始化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> stuNo;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">private</span> String stuName; <span class="comment">//姓名</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//无参构造函数 constructor ：默认隐藏</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;构造函数 constructor&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//有参构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(<span class="keyword">int</span> stuNo,String stuName)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.stuNo = stuNo;</span><br><span class="line">        <span class="keyword">this</span>.stuName =  stuName;</span><br><span class="line">        System.out.println(<span class="string">&quot;student有参构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//void 没有返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//方法有返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">fun2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> row = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> row &gt; <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"> <span class="comment">//1. new : 创建对象，开辟堆内存</span></span><br><span class="line"> <span class="comment">//2. Student() 构造函数： （1）初始化属性 ： stuNo = 0, stuName = null</span></span><br><span class="line"> <span class="comment">//                       （2）执行构造函数方法体</span></span><br><span class="line"></span><br><span class="line">    Student stu1 =  <span class="keyword">new</span> Student();</span><br><span class="line">    stu1.setStuNo(<span class="number">7788</span>);   <span class="comment">// setStuNo(..) &#123;   this.stuNo = stuNo; &#125;</span></span><br><span class="line">    stu1.setStuName(<span class="string">&quot;张南顶&quot;</span>); <span class="comment">//setStuName(..)&#123; this.stuName =  stuName; &#125;</span></span><br><span class="line">    </span><br><span class="line">    Student stu2 =  <span class="keyword">new</span> Student(<span class="number">7788</span>,<span class="string">&quot;张南顶&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;stu2 no ;&quot;</span> + stu2.getStuNo());</span><br><span class="line">    System.out.println(<span class="string">&quot;stu2 name ;&quot;</span> + stu2.getStuName());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<hr>
-<p>3.this关键字     </p>
-<pre><code>(1) this关键字的用法：
-      a. 直接写this：代表当前对象。
-      b. this.XXX：访问当前对象的实例成员。仅当方法中定义有与属性同名的局部变量时，在方法中访问类的属性才需要用this.XXX。
-      c. this( )：调用本类的其他构造方法，这种用法只能出现在构造方法的第一行。
-
-(2) 调用 this(…) 必须是构造函数里的第一个语句;
-
-(3). 说明在什么情况下需要用到this：
-    第一、通过this调用另一个构造方法，用法是this(参数列表)，这个仅仅在类的构造方法中，别的地方不能这么用。
-    第二、函数参数或者函数中的局部变量和成员变量同名的情况下，成员变量被屏蔽，此时要访问成员变量则需要用“this.成员变量名”的方式来引用成员变量。
-    第三、在函数中，需要引用该函所属类的当前对象时候，直接用this。
-</code></pre>
-<hr>
-<p>4.继承<br>    “is a” 的关系<br>        狗是一种宠物 , 猫也是一种宠物<br>        dog is a pat<br>    声明的格式<br>        在Java 中 –  extends关键字</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	 <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="keyword">extends</span> <span class="title">Employee</span>   </span>&#123;…&#125;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="title">Manager</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">	     &#125;</span><br><span class="line">注意：Java中只有单一继承。</span><br><span class="line">Object类是所有类的根类。</span><br><span class="line"></span><br><span class="line">构造方法不能被继承</span><br><span class="line">方法和属性可被继承</span><br><span class="line">子类构造方法隐式调用父类的默认构造方法</span><br><span class="line">在子类的构造函数也可以显式的调用父类的构造, 使用<span class="keyword">super</span>(…)，但是必须是第一个行有效</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>5.super关键字<br>    super 指向父类对象<br>    super():  调用父类的构造函数,需放在构造方法内第一行。<br>    super.属性: 访问父类对象的实例成员。<br>    super.方法: 访问父类对象的方法。</p>
-<pre><code>注：属性没有覆盖(重写)
-
-注意：this 和super的区别
-super调用父类的属性，方法：    
-super.方法  ， 
-super.属性  
-super();
-
-this调用属性，方法：    
-this.方法 
-this.属性
-
-构造函数中的this：    
-get，set中的this
-
-this 和super的区别：
-    
-属性访问                                                            
-调用构造函数  特殊
-this            
-访问本类中的属性,方法. 如果本类没有此属性就在父类中继续查找        
-调用本类构造，必须放在构造函数的首行            
-表示当前对象
-
-super        
-访问父类中的属性,方法                                    
-调用父类构造，必须放在子类的首行
-</code></pre>
-<hr>
-<hr>
-<ul>
-<li><p>(1) 父类引用子类对象    Pet p1 = new Dog()</p>
-</li>
-<li><p>(2)子类 不能接收父类对象  Dog d2 = new Pet();</p>
-</li>
-<li><p>(3) 可以通过强制类型转换 将父类对象赋值给子类，转换之前一定要使用instanceof来判断，防止类型转换异常ClassCastException</p>
-</li>
-<li><p>if(pet instanceof Dog){//false|true, 判断 pet对象 是否是Dog类型（即 判断 pet1 对象 是不是可以用Dog来接收 ）</p>
-<pre><code>     Dog d = (Dog)pet;
-&#125;
-</code></pre>
-</li>
+        <h1 id="JDK1-5新特性之包装类"><a href="#JDK1-5新特性之包装类" class="headerlink" title="JDK1.5新特性之包装类"></a>JDK1.5新特性之包装类</h1><ul>
+<li>包装类的作用</li>
+<li>包装类的自动装箱、自动拆箱 </li>
+<li>包装类的转换</li>
 </ul>
+<h3 id="基本数据类型包装"><a href="#基本数据类型包装" class="headerlink" title="### 基本数据类型包装"></a>### 基本数据类型包装</h3><pre><code>基本数据类型            包装类                 
+</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>					Integer			 </span><br><span class="line"><span class="keyword">char</span>			    Character      </span><br><span class="line"><span class="keyword">byte</span>				Byte			 </span><br><span class="line"><span class="keyword">short</span>				Short               </span><br><span class="line"><span class="keyword">long</span>				Long			 </span><br><span class="line"><span class="keyword">float</span>			 	Float		 </span><br><span class="line"><span class="keyword">double</span>			  	Double		 </span><br><span class="line"><span class="keyword">boolean</span>			 	Boolean	</span><br></pre></td></tr></table></figure>
+
+<h3 id><a href="#" class="headerlink" title></a></h3><p>​    基本数据类型            包装类                 </p>
+<h3 id="Number类的定义"><a href="#Number类的定义" class="headerlink" title="Number类的定义"></a>Number类的定义</h3><p>​    Number是抽象类，主要是将数字包装类中的内容变为基本数据类型。</p>
+<h3 id="装箱及拆箱"><a href="#装箱及拆箱" class="headerlink" title="装箱及拆箱"></a>装箱及拆箱</h3><p>​     基本数据类型 —-&gt; 包装类  （装箱 ： boxing）<br>​     包装类  —-&gt; 基本数据类型 （拆箱: unboxing）</p>
+<pre><code> JDK1.5版本之前，包装类不能直接进行+，-，*，/等操作；
+ JDK1.5版本之后，增加了自动拆箱和装箱的功能，且可以使用包装类直接进行数字运算。
+</code></pre>
+<p>​    </p>
+<h3 id="包装类的应用："><a href="#包装类的应用：" class="headerlink" title="包装类的应用："></a>包装类的应用：</h3><p>​    1.将字符串与数据类型相互转换<br>​    2. 泛型</p>
+<h4 id="1-int与Integer的基本使用对比"><a href="#1-int与Integer的基本使用对比" class="headerlink" title="1)  int与Integer的基本使用对比"></a>1)  int与Integer的基本使用对比</h4><p>（1）Integer是int的包装类；int是基本数据类型；</p>
+<p>（2）Integer变量必须实例化后才能使用；int变量不需要；</p>
+<p>（3）Integer实际是对象的引用，指向此new的Integer对象；int是直接存储数据值 ； </p>
+<p>（4）Integer的默认值是null；int的默认值是0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="keyword">new</span> Integer(<span class="number">100</span>);</span><br><span class="line">Integer j = <span class="keyword">new</span> Integer(<span class="number">100</span>);</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="keyword">new</span> Integer(<span class="number">100</span>);</span><br><span class="line"><span class="keyword">int</span> j = <span class="number">100</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="keyword">new</span> Integer(<span class="number">100</span>);</span><br><span class="line">Integer j = <span class="number">100</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="number">100</span>;</span><br><span class="line">Integer j = <span class="number">100</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//true </span></span><br><span class="line"></span><br><span class="line">Integer i = <span class="number">128</span>;</span><br><span class="line">Integer j = <span class="number">128</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*两个非new生成的Integer对象，进行比较时，如果两个变量的值在区间-128到127之间，</span></span><br><span class="line"><span class="comment">则比较结果为true，如果两个变量的值不在此区间，则比较结果为false</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
@@ -503,7 +435,7 @@ super
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2021/07/21/%E7%BB%A7%E6%89%BF/" title="继承" target="_blank" rel="external">http://example.com/2021/07/21/继承/</a>
+      <a href="http://example.com/2021/07/31/%E5%8C%85%E8%A3%85%E7%B1%BB/" title="包装类" target="_blank" rel="external">http://example.com/2021/07/31/包装类/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -550,12 +482,12 @@ super
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2021/07/26/final%E4%B8%8E%E9%87%8D%E5%86%99/" title="final与重写"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2021/07/31/%E6%B3%9B%E5%9E%8B/" title="泛型"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2021/07/21/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" title="方法重载与构造函数"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/07/29/String%E7%B1%BB/" title="String类"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
